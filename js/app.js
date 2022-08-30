@@ -70,6 +70,16 @@ const watch = (phoneArray)=>{
 }
 
 
+document.getElementById('see-more-button').addEventListener('click', ()=>{
+    console.log('click')
+
+    const phone = (phoneArray)=>{
+        phoneArray.splice(0, 3).forEach(phone =>{
+            displayCard(phone);
+        })    
+    }
+
+})
 
 
 
