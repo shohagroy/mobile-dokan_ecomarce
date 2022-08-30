@@ -13,8 +13,11 @@
     "
     />
 
+    <!-- fontaswame link  -->
+    <script src="https://kit.fontawesome.com/c856552904.js" crossorigin="anonymous"></script>
+
     <!-- link style -->
-    <link rel="stylesheet" href="styles/style.js" />
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
     <header class="bg-light">
@@ -66,12 +69,13 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="bg-light">
       <section>
         <!-- carousel slide -->
-        <div
+        <div class="container-fluid carousel-container">
+          <div
           id="carouselExampleControls"
-          class="carousel slide mb-5"
+          class="carousel slide mb-5 container"
           data-bs-ride="carousel"
         >
           <div class="carousel-inner">
@@ -116,6 +120,7 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+        </div>
         <!-- banar -->
         <div class="container">
           <img
@@ -124,11 +129,38 @@
             alt="banar Image"
           />
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-12">
-          <div>
-            <div>
-              <img src="" alt="" />
+        <div class="mt-5 container">
+          <div class="catagoty-container d-flex justify-content-center align-content-center row">
+
+            <div class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3">
+              <img class="catagory-img" src="images/iPhone.png" alt="" />
+              <div>
+              <i class="fa-solid fa-chevron-right"></i>
+              </div>
             </div>
+
+            <div class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3">
+              <img class="catagory-img" src="images/Oppo-logo.png" alt="" />
+              <div>
+              <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </div>
+
+            <div class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3">
+              <img class="catagory-img" src="images/realme.png" alt="" />
+              <div>
+              <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </div>
+
+            <div class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3">
+              <img class="catagory-img" src="images/vivo.png" alt="" />
+              <div>
+              <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </div>
+            
+            
           </div>
         </div>
       </section>
