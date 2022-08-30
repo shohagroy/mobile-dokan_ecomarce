@@ -1,5 +1,10 @@
 
 
+.a{
+    text-decoration: none;
+}
+
+
 .carousel-container{
     background-color: #F85506;
 }
@@ -20,4 +25,43 @@
 
 .catagory-item:hover{
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.288);
+}
+
+
+footer{
+    color: white;
+    background-color: #2E2E54;
+    /* background-image: linear-gradient(90deg,#ffa94dbd, #ffce8a65, #ffa94dbd); */
+}
+
+.custom-btn{
+    color: white;
+}
+
+.icon{
+    color: #F85506;
+    font-size: 20px;
+    margin: 10px;
+
+}
+
+
+
+.submitbutton, .buy-button{
+    background-color: #F85506;
+    color: white;
+    border: white;
+    margin: 5px 0;
+}
+
+
+/* js control  */
+
+.card-image{
+    width: 100%;
+    padding: 20px;
+}
+
+.card:hover{
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.186);
 }
