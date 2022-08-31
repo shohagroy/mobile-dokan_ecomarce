@@ -6,6 +6,8 @@ const getphone = (search = "" )=>{
     .then(data => phones(data.data))
 }
 
+const seeAllBtnDiv = document.getElementById('button-div2');
+seeAllBtnDiv.style.display = "none";
 
 const mainItemContainer = document.getElementById('main-container');
 
@@ -26,64 +28,65 @@ const displayCard = (cardData)=>{
         </div>
     `
     mainItemContainer.appendChild(cardDiv);
-
-
 }
 
 
 getphone('iphone')
-const iPhone = (phoneArray)=>{
-    phoneArray.splice(0, 3).forEach(phone =>{
-        displayCard(phone);
-    })    
-}
-
-
 getphone('samsung')
-const phones = (phoneArray)=>{
-    phoneArray.splice(0, 3).forEach(phone =>{
-        displayCard(phone);
-    })    
-}
-
-
 getphone('oppo')
-const oppo = (phoneArray)=>{
-    phoneArray.splice(0, 3).forEach(phone =>{
-        displayCard(phone);
-    })    
-}
-
-
 getphone('huawei')
-const huawei = (phoneArray)=>{
-    phoneArray.splice(0, 3).forEach(phone =>{
-        displayCard(phone);
-    })    
-}
-
 getphone('watch')
-const watch = (phoneArray)=>{
+
+
+function phones(phoneArray){
     phoneArray.splice(0, 3).forEach(phone =>{
         displayCard(phone);
-    })    
-}
+    })
+    
 
+    document.getElementById('see-more-button1').addEventListener('click', ()=>{
 
-document.getElementById('see-more-button').addEventListener('click', ()=>{
-    console.log('click')
-
-    const phone = (phoneArray)=>{
-        phoneArray.splice(0, 3).forEach(phone =>{
+        phoneArray.splice(4, 12).forEach(phone =>{
             displayCard(phone);
-        })    
-    }
+        })
 
-})
+        const seeMoreButton = document.getElementById('button-div');
+        seeMoreButton.style.display = "none";
+    })
 
-
-
-
+}
 
 // see all function
 
+
+// display catagory function 
+
+const displayCatagory = (itemName) =>{
+    fetch(`https://openapi.programming-hero.com/api/phones?search=${itemName}`)
+    .then(res => res.json())
+    .then(data => displayItem(data.data))
+
+    const displayItem = (items)=>{
+
+        mainItemContainer.textContent = '';
+        const seeMoreButton = document.getElementById('button-div');
+        seeMoreButton.style.display = "none";
+        seeAllBtnDiv.style.display = "block";
+
+        items.splice(0,12).forEach(phone =>{
+            displayCard(phone);
+        })
+
+
+        document.getElementById('see-all-button').addEventListener('click', ()=>{
+        mainItemContainer.textContent = '';
+        console.log(items)
+            items.forEach(phone =>{
+                displayCard(phone);
+
+                console.log(items)
+            })
+            seeAllBtnDiv.style.display = "none";
+        })
+    }
+}

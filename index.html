@@ -72,7 +72,7 @@
         </div>
       </nav>
     </header>
-    <main class="bg-light">
+    <main>
       <section>
         <!-- carousel slide -->
         <div class="container-fluid carousel-container">
@@ -142,7 +142,7 @@
           <div
             class="catagoty-container d-flex justify-content-center align-content-center row"
           >
-            <div
+            <div onclick="displayCatagory('apple')"
               class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
             >
               <img class="catagory-img" src="images/iPhone.png" alt="" />
@@ -151,7 +151,7 @@
               </div>
             </div>
 
-            <div
+            <div onclick="displayCatagory('oppo')"
               class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
             >
               <img class="catagory-img" src="images/Oppo-logo.png" alt="" />
@@ -160,7 +160,7 @@
               </div>
             </div>
 
-            <div
+            <div onclick="displayCatagory('samsung')"
               class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
             >
               <img class="catagory-img" src="images/samsung.webp" alt="" />
@@ -169,10 +169,10 @@
               </div>
             </div>
 
-            <div
+            <div onclick="displayCatagory('huawei')"
               class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
             >
-              <img class="catagory-img" src="images/vivo.png" alt="" />
+              <img class="catagory-img" src="images/huawei.png" alt="" />
               <div>
                 <i class="fa-solid fa-chevron-right"></i>
               </div>
@@ -191,8 +191,13 @@
         </div>
 
         <!-- see more button  -->
-        <div class="p-5 text-center">
-          <button class="btn buy-button" id="see-more-button">See More</button>
+        <div class="p-5 text-center" id="button-div">
+          <button class="btn buy-button" id="see-more-button1">See More</button>
+        </div>
+
+        <!-- see all button  -->
+        <div class="p-5 text-center" id="button-div2">
+          <button class="btn buy-button" id="see-all-button">See All Item</button>
         </div>
 
       </section>
@@ -200,7 +205,7 @@
 
 
     <!-- footer section  -->
-      <footer class="footer-1 p-5">
+      <footer class="footer-1 p-5 mt-4">
         <div class="main-footer widgets-dark typo-light">
         <div class="container">
         <div class="row">
