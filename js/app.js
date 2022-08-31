@@ -1,5 +1,9 @@
+const toggleSpiner = document.querySelector('.amination-spinar');
+
 
 const getphone = (search = "" )=>{
+toggleSpiner.classList.remove('d-none')
+
     const phoneHanterApi = `https://openapi.programming-hero.com/api/phones?search=${search}`
     fetch(phoneHanterApi)
     .then(res => res.json())
@@ -27,7 +31,9 @@ const displayCard = (cardData)=>{
             </div>
         </div>
     `
+    toggleSpiner.classList.add('d-none')
     mainItemContainer.appendChild(cardDiv);
+
 }
 
 
@@ -38,19 +44,21 @@ getphone('huawei')
 getphone('watch')
 
 
+const seeMoreButton = document.getElementById('button-div');
+
 function phones(phoneArray){
     phoneArray.splice(0, 3).forEach(phone =>{
         displayCard(phone);
     })
-    
 
     document.getElementById('see-more-button1').addEventListener('click', ()=>{
+
+        toggleSpiner.classList.remove('d-none')
 
         phoneArray.splice(4, 12).forEach(phone =>{
             displayCard(phone);
         })
 
-        const seeMoreButton = document.getElementById('button-div');
         seeMoreButton.style.display = "none";
     })
 
@@ -62,6 +70,8 @@ function phones(phoneArray){
 // display catagory function 
 
 const displayCatagory = (itemName) =>{
+toggleSpiner.classList.remove('d-none')
+
     fetch(`https://openapi.programming-hero.com/api/phones?search=${itemName}`)
     .then(res => res.json())
     .then(data => displayItem(data.data))
@@ -79,14 +89,54 @@ const displayCatagory = (itemName) =>{
 
 
         document.getElementById('see-all-button').addEventListener('click', ()=>{
+        toggleSpiner.classList.remove('d-none')
+
         mainItemContainer.textContent = '';
-        console.log(items)
             items.forEach(phone =>{
                 displayCard(phone);
-
-                console.log(items)
             })
             seeAllBtnDiv.style.display = "none";
         })
     }
 }
+
+
+// search function find functin  
+
+const searchPhones = (find)=>{
+    toggleSpiner.classList.remove('d-none')
+    fetch(`https://openapi.programming-hero.com/api/phones?search=${find}`)
+    .then(res => res.json())
+    .then(data => searchPhone(data.data))
+
+    const searchPhone = (phones)=>{
+        mainItemContainer.textContent = '';
+
+        phones.forEach(phone =>{
+            displayCard(phone);
+        })
+    }
+    seeMoreButton.style.display = "none";
+}
+
+
+
+    const searchArea = document.getElementById('search-fild');
+    const searchitem = searchArea.value;
+
+    // search button function 
+document.getElementById('search-button').addEventListener('click', ()=>{
+    searchPhones(searchitem);
+    searchArea.value = "";
+})
+
+
+
+// enter keys function 
+searchArea.addEventListener('keyup', (event)=>{
+    if(event.key == 'Enter'){
+        searchPhones(searchitem);
+        searchArea.value = "";
+
+    }
+})
