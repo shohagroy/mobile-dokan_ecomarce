@@ -107,36 +107,47 @@ const searchPhones = (find)=>{
     toggleSpiner.classList.remove('d-none')
     fetch(`https://openapi.programming-hero.com/api/phones?search=${find}`)
     .then(res => res.json())
-    .then(data => searchPhone(data.data))
+    .then(data => callJson(data.data))
 
-    const searchPhone = (phones)=>{
+    const callJson = (phones)=>{
         mainItemContainer.textContent = '';
 
-        phones.forEach(phone =>{
-            displayCard(phone);
-        })
-    }
-    seeMoreButton.style.display = "none";
+        console.log(phones.length);
+        if(phones.length == 0){
+            console.log(mainItemContainer)
+            mainItemContainer.innerHTML = `
+            <div class="container text-center">
+            <h1 >Your Searh <span class="bg-bg-danger">"${find}"</span> is ${phones.length}, Search No Result ! </h1>
+            </div>`
+
+            toggleSpiner.classList.add('d-none')
+        }
+        else{
+            phones.forEach(phone =>{
+                displayCard(phone);
+            })
+        }
+        seeMoreButton.style.display = "none";
+
+        }  
 }
 
-
-
     const searchArea = document.getElementById('search-fild');
-    const searchitem = searchArea.value;
 
+    // enter function 
+    searchArea.addEventListener("keyup", (event)=>{
+        console.log(event.key)
+        if(event.key === "Enter"){
+            searchPhones(searchArea.value);
+            searchArea.value = "";
+        }
+    })
     // search button function 
 document.getElementById('search-button').addEventListener('click', ()=>{
-    searchPhones(searchitem);
+    searchPhones(searchArea.value);
     searchArea.value = "";
+
 })
 
 
 
-// enter keys function 
-searchArea.addEventListener('keyup', (event)=>{
-    if(event.key == 'Enter'){
-        searchPhones(searchitem);
-        searchArea.value = "";
-
-    }
-})
