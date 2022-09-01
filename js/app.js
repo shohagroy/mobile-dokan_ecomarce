@@ -27,12 +27,18 @@ const displayCard = (cardData)=>{
                 <p class="card-text">${cardData.brand}</p>
             </div>
             <div class="card-footer">
-                <button class="btn buy-button"</button>Buy Now</button>
+                <button class="btn buy-button" onclick="buyNowButton(${cardData.slug})">Buy Now</button>
             </div>
         </div>
     `
     toggleSpiner.classList.add('d-none')
     mainItemContainer.appendChild(cardDiv);
+
+}
+
+const buyNowButton = () =>{
+
+    console.log("buy now button clicked")
 
 }
 
@@ -62,7 +68,12 @@ function phones(phoneArray){
         seeMoreButton.style.display = "none";
     })
 
+console.log(phoneArray[0])
+
+
 }
+
+
 
 // see all function
 
@@ -117,7 +128,7 @@ const searchPhones = (find)=>{
             console.log(mainItemContainer)
             mainItemContainer.innerHTML = `
             <div class="container text-center">
-            <h1 >Your Searh <span class="bg-bg-danger">"${find}"</span> is ${phones.length}, Search No Result ! </h1>
+            <h1 >Your Search <span class="text-danger">"${find}"</span> is ${phones.length},No Result Found ! </h1>
             </div>`
 
             toggleSpiner.classList.add('d-none')

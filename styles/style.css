@@ -85,3 +85,12 @@ footer{
 .card:hover{
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.186);
 }
+
+
+/* bye now container strat  */
+
+.bye-now-container{
+    height: 80vh;
+    width: 100vw;
+    background-color: aqua;
+}
