@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mobile Dokan</title>
+    <title>Mobile Dokan - Buy best Price Smart Phone</title>
 
     <!-- link bootstrap css -->
     <link
@@ -49,14 +49,22 @@
                   >Home</a
                 >
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Product</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Catagory
+                </a>
+                <ul class="dropdown-menu">
+                  <li onclick="displayCatagory('apple')"><a class="dropdown-item" href="#">iPhone</a></li>
+                  <li onclick="displayCatagory('oppo')"><a class="dropdown-item" href="#">Oppo</a></li>
+                  <li onclick="displayCatagory('samsung')"><a class="dropdown-item" href="#">Samsung</a></li>
+                  <li onclick="displayCatagory('huawei')"><a class="dropdown-item" href="#">Huawei</a></li>
+                </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link">About</a>
+                <a class="nav-link" href="#footer">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link">Contact</a>
+                <a class="nav-link" href="#footer">Contact</a>
               </li>
             </ul>
             <div class="d-flex" role="search">
@@ -226,7 +234,7 @@
           <!-- js control  -->
 
 
-          
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -243,7 +251,7 @@
 
 
     <!-- footer section  -->
-      <footer class="footer-1 p-5 mt-4">
+      <footer class="footer-1 p-5 mt-4" id="footer">
         <div class="main-footer widgets-dark typo-light">
         <div class="container">
         <div class="row">
