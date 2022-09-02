@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+
+    <!-- header container  -->
     <header class="bg-light">
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -80,134 +82,146 @@
 
 
     <main>
-      <section>
-        <!-- carousel slide -->
-        <div class="container-fluid carousel-container">
-          <div
-            id="carouselExampleControls"
-            class="carousel slide mb-5 container"
-            data-bs-ride="carousel"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  src="images/slider-1.jpg"
-                  class="d-block w-100"
-                  alt="banar-1"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="images/slider-2.jpg"
-                  class="d-block w-100"
-                  alt="banar-2"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="images/slider-3.jpg"
-                  class="d-block w-100"
-                  alt="banar-3"
-                />
-              </div>
-            </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleControls"
-              data-bs-slide="prev"
+      <div id="main-page-container">
+        <section>
+          <!-- carousel slide -->
+          <div class="container-fluid carousel-container">
+            <div
+              id="carouselExampleControls"
+              class="carousel slide mb-5 container"
+              data-bs-ride="carousel"
             >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleControls"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-        <!-- banar -->
-        <div class="container">
-          <img
-            src="images/mini-banar.jpg"
-            class="img-fluid rounded-4"
-            alt="banar Image"
-          />
-        </div>
-        <div class="mt-5 container">
-          <div
-            class="catagoty-container d-flex justify-content-center align-content-center row"
-          >
-            <div onclick="displayCatagory('apple')"
-              class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
-            >
-              <img class="catagory-img" src="images/iPhone.png" alt="" />
-              <div>
-                <i class="fa-solid fa-chevron-right"></i>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="images/slider-1.jpg"
+                    class="d-block w-100"
+                    alt="banar-1"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="images/slider-2.jpg"
+                    class="d-block w-100"
+                    alt="banar-2"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="images/slider-3.jpg"
+                    class="d-block w-100"
+                    alt="banar-3"
+                  />
+                </div>
               </div>
-            </div>
-
-            <div onclick="displayCatagory('oppo')"
-              class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
-            >
-              <img class="catagory-img" src="images/Oppo-logo.png" alt="" />
-              <div>
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-
-            <div onclick="displayCatagory('samsung')"
-              class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
-            >
-              <img class="catagory-img" src="images/samsung.webp" alt="" />
-              <div>
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-            </div>
-
-            <div onclick="displayCatagory('huawei')"
-              class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
-            >
-              <img class="catagory-img" src="images/huawei.png" alt="" />
-              <div>
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
-        </div>
-      </section>
+          <!-- banar -->
+          <div class="container">
+            <img
+              src="images/mini-banar.jpg"
+              class="img-fluid rounded-4"
+              alt="banar Image"
+            />
+          </div>
+          <div class="mt-5 container">
+            <div
+              class="catagoty-container d-flex justify-content-center align-content-center row"
+            >
+              <div onclick="displayCatagory('apple')"
+                class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
+              >
+                <img class="catagory-img" src="images/iPhone.png" alt="" />
+                <div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+  
+              <div onclick="displayCatagory('oppo')"
+                class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
+              >
+                <img class="catagory-img" src="images/Oppo-logo.png" alt="" />
+                <div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+  
+              <div onclick="displayCatagory('samsung')"
+                class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
+              >
+                <img class="catagory-img" src="images/samsung.webp" alt="" />
+                <div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+  
+              <div onclick="displayCatagory('huawei')"
+                class="border border-1 rounded-4 border-dark col-11 col-md-4 col-lg-2 catagory-item m-3"
+              >
+                <img class="catagory-img" src="images/huawei.png" alt="" />
+                <div>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <!-- item section  -->
+        <section class="container">
+          <h2 class="p-2 m-3">Categories</h2>
+          <div id="main-container" class="row row-cols-1 row-cols-md-3 g-4" >
+  
+            <!-- js control  -->
+  
+          </div>
+  
+          <!-- see more button  -->
+          <div class="p-5 text-center" id="button-div">
+            <button class="btn buy-button" id="see-more-button1">See More</button>
+          </div>
+  
+          <!-- see all button  -->
+          <div class="p-5 text-center" id="button-div2">
+            <button class="btn buy-button" id="see-all-button">See All Item</button>
+          </div>
+  
+        </section>
+      </div>
 
-      <!-- item section  -->
-      <section class="container">
-        <h2 class="p-2 m-3">Categories</h2>
-        <div id="main-container" class="row row-cols-1 row-cols-md-3 g-4" >
+      <section class="bye-now-container" id="mobile-details-container">
 
-          <!-- js control  -->
+       
 
-        </div>
+        <!-- js control  -->
 
-        <!-- see more button  -->
-        <div class="p-5 text-center" id="button-div">
-          <button class="btn buy-button" id="see-more-button1">See More</button>
-        </div>
+    </section>
 
-        <!-- see all button  -->
-        <div class="p-5 text-center" id="button-div2">
-          <button class="btn buy-button" id="see-all-button">See All Item</button>
-        </div>
-
-      </section>
+      
     </main>
 
 
@@ -224,7 +238,6 @@
         </div>
         </div>
         
-          
         <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="widget no-box">
         <h5 class="widget-title">Quick Links<span></span></h5>
@@ -240,7 +253,6 @@
         </div>
         
           
-        
               <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="widget no-box">
         <h5 class="widget-title ">Follow up<span></span></h5>

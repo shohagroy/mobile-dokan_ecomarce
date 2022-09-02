@@ -90,7 +90,19 @@ footer{
 /* bye now container strat  */
 
 .bye-now-container{
-    height: 80vh;
-    width: 100vw;
-    background-color: aqua;
+    /* height: 80vh;
+    width: 100vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-image{
+    height: 60vh;
+}
+
+.mobile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -27,7 +27,7 @@ const displayCard = (cardData)=>{
                 <p class="card-text">${cardData.brand}</p>
             </div>
             <div class="card-footer">
-                <button class="btn buy-button" onclick="buyNowButton(${cardData.slug})">Buy Now</button>
+                <button class="btn buy-button" onclick="buyNowButton('${cardData.slug}')">Buy Now</button>
             </div>
         </div>
     `
@@ -36,11 +36,6 @@ const displayCard = (cardData)=>{
 
 }
 
-const buyNowButton = () =>{
-
-    console.log("buy now button clicked")
-
-}
 
 
 getphone('iphone')
@@ -67,9 +62,6 @@ function phones(phoneArray){
 
         seeMoreButton.style.display = "none";
     })
-
-console.log(phoneArray[0])
-
 
 }
 
@@ -162,3 +154,105 @@ document.getElementById('search-button').addEventListener('click', ()=>{
 
 
 
+
+
+
+
+
+    // buy now button function 
+    const buyNowButton = (selectPhone) =>{
+
+    toggleSpiner.classList.remove('d-none')
+
+        // buy now page function 
+        fetch(`https://openapi.programming-hero.com/api/phone/${selectPhone}`)
+        .then(res => res.json())
+        .then(data => displayPhone(data.data));
+
+        const displayPhone = (phoneDetails)=>{
+            document.getElementById('main-page-container').style.display = "none";
+            document.getElementById('mobile-details-container').innerHTML = `
+            <div class="container my-5">
+            <div class=" mobile-container">
+            <div class="row d-flex">
+                <div class="col-12 col-sm-12 col-md-5 bg-light">
+                <img src="${phoneDetails.image}" class="img-fluid w-100 p-3" alt="image">
+                <h3 class="text-center">${phoneDetails.name}</h3>
+                <button class="w-100 btn buy-button">Make Payment</button>
+                </div>
+    
+                <div class="col-12 col-sm-12 col-md-7">
+                <h4 class="text-center p-2 bg-light">Full Specifications</h4>
+                <div>
+                    <table class="table table-striped table-bordered">
+                    <thead>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        
+                        <tr>
+                        <td>Brand</td>
+                        <td>${phoneDetails.brand}</td>
+                        </tr>
+                        <tr>
+                        <td>First Release	</td>
+                        <td>${phoneDetails.releaseDate}</td>
+                        </tr>
+                        <tr>
+                        <td>Connectivity</td>
+                        <td></td>
+                        </tr>
+                        <tr>
+                        <td>Bluetooth</td>
+                        <td>${phoneDetails.others.Bluetooth}</td>
+                        </tr>
+                        <tr>
+                        <td>GPS</td>
+                        <td>${phoneDetails.others.GPS}</td>
+                        </tr>
+                        <tr>
+                        <td>NFC</td>
+                        <td>${phoneDetails.others.NFC}</td>
+                        </tr>
+                        <tr>
+                        <td>Radio</td>
+                        <td>${phoneDetails.others.Radio}</td>
+                        </tr>
+                        <tr>
+                        <td>USB</td>
+                        <td>${phoneDetails.others.USB}</td>
+                        </tr>
+                        <tr>
+                        <td>WLAN</td>
+                        <td>${phoneDetails.others.WLAN}</td>
+                        </tr>
+                        <tr>
+                        <td>Main Features</td>
+                
+                        </tr>
+                        <tr>
+                        <td>CHipset</td>
+                        <td>${phoneDetails.mainFeatures.chipSet}</td>
+                        </tr>
+                        <tr>
+                        <td>Display Size</td>
+                        <td>${phoneDetails.mainFeatures.displaySize}</td>
+                        </tr>
+                        <tr>
+                        <td>Memory</td>
+                        <td>${phoneDetails.mainFeatures.memory}</td>
+                        </tr>
+                        <tr>
+                        <td>Sensors</td>
+                        <td>${phoneDetails.mainFeatures.sensors[0]}, ${phoneDetails.mainFeatures.sensors[1]}, ${phoneDetails.mainFeatures.sensors[2]}, ${phoneDetails.mainFeatures.sensors[3]}, ${phoneDetails.mainFeatures.sensors[4]}, ${phoneDetails.mainFeatures.sensors[5]}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>`
+            toggleSpiner.classList.add('d-none')
+
+        }
+    }
