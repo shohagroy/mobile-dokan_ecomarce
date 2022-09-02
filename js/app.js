@@ -1,20 +1,25 @@
+
+// toggle spiner 
 const toggleSpiner = document.querySelector('.amination-spinar');
 
-
+// get phome page api function 
 const getphone = (search = "" )=>{
 toggleSpiner.classList.remove('d-none')
-
     const phoneHanterApi = `https://openapi.programming-hero.com/api/phones?search=${search}`
     fetch(phoneHanterApi)
     .then(res => res.json())
     .then(data => phones(data.data))
 }
 
+
+// get see all button function 
 const seeAllBtnDiv = document.getElementById('button-div2');
 seeAllBtnDiv.style.display = "none";
 
+// main container 
 const mainItemContainer = document.getElementById('main-container');
 
+// display card function 
 const displayCard = (cardData)=>{
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('col');
@@ -37,7 +42,7 @@ const displayCard = (cardData)=>{
 }
 
 
-
+// home page search item 
 getphone('iphone')
 getphone('samsung')
 getphone('oppo')
@@ -45,6 +50,7 @@ getphone('huawei')
 getphone('watch')
 
 
+// see more button function 
 const seeMoreButton = document.getElementById('button-div');
 
 function phones(phoneArray){
@@ -59,19 +65,12 @@ function phones(phoneArray){
         phoneArray.splice(4, 12).forEach(phone =>{
             displayCard(phone);
         })
-
         seeMoreButton.style.display = "none";
     })
-
 }
 
 
-
-// see all function
-
-
 // display catagory function 
-
 const displayCatagory = (itemName) =>{
 toggleSpiner.classList.remove('d-none')
 
@@ -115,9 +114,7 @@ const searchPhones = (find)=>{
     const callJson = (phones)=>{
         mainItemContainer.textContent = '';
 
-        console.log(phones.length);
         if(phones.length == 0){
-            console.log(mainItemContainer)
             mainItemContainer.innerHTML = `
             <div class="container text-center">
             <h1 >Your Search <span class="text-danger">"${find}"</span> is ${phones.length},No Result Found ! </h1>
@@ -139,7 +136,6 @@ const searchPhones = (find)=>{
 
     // enter function 
     searchArea.addEventListener("keyup", (event)=>{
-        console.log(event.key)
         if(event.key === "Enter"){
             searchPhones(searchArea.value);
             searchArea.value = "";
@@ -152,16 +148,9 @@ document.getElementById('search-button').addEventListener('click', ()=>{
 
 })
 
-
-
-
-
-
-
-
     // buy now button function 
     const buyNowButton = (selectPhone) =>{
-
+        
     toggleSpiner.classList.remove('d-none')
 
         // buy now page function 
@@ -252,7 +241,93 @@ document.getElementById('search-button').addEventListener('click', ()=>{
             </div>
             </div>
             </div>`
+
             toggleSpiner.classList.add('d-none')
 
         }
+    
+    
     }
+
+
+    // comment carousol controlar function 
+    
+    const findUser = ()=>{
+        fetch('https://randomuser.me/api/?results=5')
+        .then(res => res.json())
+        .then(data => users(data.results))
+    }
+
+        const users = (user)=>{
+
+
+            console.log(user)
+
+            const commentsCountainer = document.getElementById('comment-filed');
+            console.log(commentsCountainer);
+            commentsCountainer.innerHTML =`
+
+            <div class="carousel-item active" data-bs-interval="10000">
+            <div class="comment-section">
+              <div class="d-flex justify-content-center align-items-center flex-column" >
+                <img src="${user[0].picture.medium}" alt="" width="100" height="100"> 
+              <p>${user[0].name.title}. ${user[0].name.first} ${user[0].name.last}</p>
+              </div>
+              <div class="commnet-text">
+              <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere vel, accusantium nam sapiente voluptatibus, facilis exercitationem similique harum laborum deserunt blanditiis voluptatum fugit ipsa nobis? Incidunt ex.</P>
+              </div>
+            </div> 
+          </div>
+          <div class="carousel-item" data-bs-interval="20000">
+            <div class="comment-section">
+              <div class="d-flex justify-content-center align-items-center flex-column" >
+                <img src="${user[1].picture.medium}" alt="" width="100" height="100"> 
+              <p>${user[1].name.title}. ${user[1].name.first} ${user[1].name.last}</p>
+              </div>
+              <div class="commnet-text">
+                <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere vel, accusantium nam sapiente voluptatibus, facilis exercitationem similique harum laborum deserunt blanditiis voluptatum fugit ipsa nobis? Incidunt ex.</P>
+              </div>
+            </div> 
+          </div>
+          <div class="carousel-item" data-bs-interval="30000">
+            <div class="comment-section">
+              <div class="d-flex justify-content-center align-items-center flex-column" >
+                <img src="${user[2].picture.medium}" alt="" width="100" height="100"> 
+              <p>${user[2].name.title}. ${user[2].name.first} ${user[2].name.last}</p>
+              </div>
+              <div class="commnet-text">
+              <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere vel, accusantium nam sapiente voluptatibus, facilis exercitationem similique harum laborum deserunt blanditiis voluptatum fugit ipsa nobis? Incidunt ex.</P>
+              </div>
+            </div> 
+          </div>
+
+          <div class="carousel-item" data-bs-interval="40000">
+            <div class="comment-section">
+              <div class="d-flex justify-content-center align-items-center flex-column" >
+                <img src="${user[3].picture.medium}" alt="" width="100" height="100"> 
+              <p>${user[3].name.title}. ${user[3].name.first} ${user[3].name.last}</p>
+              </div>
+              <div class="commnet-text">
+              <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere vel, accusantium nam sapiente voluptatibus, facilis exercitationem similique harum laborum deserunt blanditiis voluptatum fugit ipsa nobis? Incidunt ex.</P>
+              </div>
+            </div> 
+          </div>
+
+          <div class="carousel-item">
+            <div class="comment-section">
+              <div class="d-flex justify-content-center align-items-center flex-column" >
+                <img src="${user[4].picture.medium}" alt="" width="100" height="100"> 
+              <p>${user[4].name.title}. ${user[4].name.first} ${user[4].name.last}</p>
+              </div>
+              <div class="commnet-text">
+              <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere vel, accusantium nam sapiente voluptatibus, facilis exercitationem similique harum laborum deserunt blanditiis voluptatum fugit ipsa nobis? Incidunt ex.</P>
+              </div>
+            </div> 
+          </div>
+
+            `
+
+        }
+
+        findUser()
+        

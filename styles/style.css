@@ -106,3 +106,29 @@ footer{
     justify-content: center;
     align-items: center;
 }
+
+.comment-container{
+    /* height: 300px; */
+    width: 50vw;
+    margin: auto;
+    margin-top: 20px;
+    background-color: rgba(255, 0, 0, 0.063);
+    padding: 30px;
+    border-radius: 20px;
+    
+}
+
+.carousel-card{
+
+}
+.comment-section img{
+    background-color: red;
+    border-radius: 50%;
+    border: 2px solid white;
+
+}
+
+.commnet-text p{
+    padding: 0 15px;
+    text-align: center;
+}
