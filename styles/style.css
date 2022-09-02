@@ -78,8 +78,9 @@ footer{
 /* js control  */
 
 .card-image{
-    width: 100%;
+    width: 80%;
     padding: 20px;
+    margin: auto;
 }
 
 .card:hover{
